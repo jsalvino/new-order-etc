@@ -1,27 +1,30 @@
-.albums-container {
-	// display: flex;
-	// flex-wrap: wrap;
-}
+// ================================
+// Styling for the Albums page
+// ================================
 
 .album-item {
 	width: 100%;
-	// border: 1px solid green;
 	display: flex;
-	// flex-direction: row;
-	// flex-wrap: no-wrap;
 }
 
 .album-image {
 	width: 50%;
-	// border: 1px solid red;
+}
+
+.album-image img {
+	height: 100%;
+	width: 100%;
 }
 
 .album-info {
 	width: 50%;
-	// border: 1px solid yellow;
-	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
 .album-item:nth-child(even) > .album-image {
   order: 2;
 }
+
