@@ -14,7 +14,7 @@ add_action( 'wp_head', 'vr_set_featured_background', 99);
        height:100%;
        margin:0!important;
        }
-       body {
+       .main {
        background:url(<?php echo $image_url[0]; ?>) #fff center top no-repeat;
        background-size: cover;
        background-attachment: fixed;

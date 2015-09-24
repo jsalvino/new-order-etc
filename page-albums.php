@@ -14,9 +14,11 @@ add_action( 'wp_head', 'vr_set_featured_background', 99);
        height:100%;
        margin:0!important;
        }
-       .main {
-       background:url(<?php echo $image_url[0]; ?>) #fff center top no-repeat;
+       .albums {
+       background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url(<?php echo $image_url[0]; ?>);
        background-size: cover;
+       background-position: center top;
+       background-repeat: no-repeat;
        }
      </style>
    <?php
@@ -25,19 +27,28 @@ add_action( 'wp_head', 'vr_set_featured_background', 99);
 
 get_header();  ?>
 
-<div class="main">
+<div class="main albums wow bounceInDown">
   <div class="container">
 
     <?php // Start the loop ?>
+    <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
+
+      <h2><?php the_title(); ?></h2>
+      <?php // the_content(); ?>
+
+    <?php endwhile; // end the loop?>
+  </div> <!-- /.container -->
+</div> <!-- /.main -->
+
+<div class="albums-intro">
+<?php // Start the loop ?>
     <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 
       <h2><?php //the_title(); ?></h2>
       <?php the_content(); ?>
 
     <?php endwhile; // end the loop?>
-  </div> <!-- /.container -->
-</div> <!-- /.main -->
-
+</div>
 <!-- Custom loop goes here -->
 
 <div class="albums-container">
@@ -58,7 +69,7 @@ get_header();  ?>
         <!-- <section id="<?php echo $post->post_name; ?>"> -->
         <div class="album-item <?php echo $post->post_name; ?>">
           <div class="wow bounceInLeft album-image">
-            <p><?php the_post_thumbnail('large'); ?></p>
+            <a href="<?php the_permalink(); ?>"><p><?php the_post_thumbnail('large'); ?></p></a>
           </div> <!-- album-image -->
           <div class="wow bounceInRight album-info">
             <h2><?php the_title(); ?></h2>

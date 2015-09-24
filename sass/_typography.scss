@@ -2,12 +2,29 @@
 	font-family: 'Fira Sans', sans-serif;
 }
 
+// a {
+// 	color: #BA209B;
+// 	text-decoration: none;
+// 	&:hover {
+// 		color: #D424B1;
+// 	}
+// }
+
 a {
-	color: #BA209B;
+	color: black;
 	text-decoration: none;
 	&:hover {
-		color: #D424B1;
+		color: red;
 	}
+}
+
+h2 {
+	color: black;
+	font-weight: 300;
+	font-size: 2em;
+	line-spacing: 10px;
+	text-align: center;
+	// border: 1px solid black;
 }
 
 /* paragraphs */
